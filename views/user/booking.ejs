@@ -1,0 +1,57 @@
+
+<button type="button" class="butn border-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <span>Launch static backdrop modal</span>
+</button>
+<!-- static Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Book your order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/book_order" method="POST">
+                  
+                    <div class="modal-body">
+                        <!-- Add 6 input text fields here -->
+                        <div class="mb-3">
+                        <label for="from" class="form-label">From:</label>
+                        <input type="text" class="form-control" name="frm" id="from" placeholder="Enter From (Location)" required><br>
+                        </div>
+                        <div class="mb-3">
+                        <label for="destinattion" class="form-label">Destination:</label>
+                        <input type="text" class="form-control" name="destination" id="destinattion" placeholder="Enter Destination (Location)" required><br>
+                        </div>
+                        <div class="mb-3">
+                        <label for="box" class="form-label">Number of boxes:</label>
+                        <input type="text" class="form-control" name="box" id="box" placeholder="Enter Number Of Boxes" required><br>
+                        </div>
+                        <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required><br>
+                        </div>
+                        <div class="mb-3">
+                        <label for="contact" class="form-label">Contact:</label>
+                        <input type="text" class="form-control" name="contact" id="contact" placeholder="Enter Contact" required><br>
+                        </div>
+                        <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email" required><br>
+                        </div>
+                        <div class="mb-3">
+                        <label for="details" class="form-label">Booking details</label>
+                        <textarea name="booking_details" id="details" cols="30" rows="10" class="form-control"  id="input6" required placeholder="Enter Booking Details"></textarea>
+                        </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="booking_modal_submit">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+                                

@@ -127,11 +127,22 @@ module.exports={
     }
 
     },
+
     userinfo:async(req,res)=>{
         let user=req.session.userloggedIn
         const data = req.session.userloginuser;
         res.render('user/userinfo',{data,user})
+    },
+
+    cargobooking:async(req,res)=>{
+        try{
+        res.render('user/booking');
+        }catch(err){
+            console.log(err);
+        }
     }
+
+
 
 
 

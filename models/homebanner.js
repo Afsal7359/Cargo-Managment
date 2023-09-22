@@ -1,11 +1,21 @@
 const mongoose= require('mongoose')
 
 const BannerSchema = new mongoose.Schema({
-    bannerhead:{
+    bannerhead1:{
         type:String,
-        require:true,
+        required:true,
         trim:true
     },
-    baner
-
-})
+    bannerhead2:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    bannerimage:{
+        type:String,
+        required:true,
+    },
+});
+ 
+const banner=mongoose.model('Home banner', BannerSchema);
+module.exports=banner;

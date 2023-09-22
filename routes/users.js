@@ -25,5 +25,7 @@ router.get('/blog',usercontroller.userBlog);
 
 router.get('/user',usercontroller.userinfo);
 
+router.get('/booking',usercontroller.cargobooking);
+
 
 module.exports = router;
