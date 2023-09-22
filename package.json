@@ -1,0 +1,25 @@
+{
+  "name": "cargo-website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "~4.16.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-layout": "^0.1.0",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mongoose": "^7.5.2",
+    "morgan": "~1.9.1",
+    "nodemon": "^3.0.1"
+  }
+}

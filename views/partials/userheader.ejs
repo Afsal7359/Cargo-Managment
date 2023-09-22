@@ -1,0 +1,102 @@
+        <!-- HEADER
+        ================================================== -->
+        <header class="header-style1 menu_area-light">
+
+            <div class="navbar-default border-bottom border-color-light-white">
+
+       
+
+                <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+                                        <a href="/" class="navbar-brand logochange"><img id="logo" src="img/logos/logo-inner.png" alt="logo" /></a>
+                                        <!-- end logo -->
+                                    </div>
+
+                                    <div class="navbar-toggler bg-primary"></div>
+
+                                    <!-- menu area -->
+                                    <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
+                                        <li>
+                                            <a href="/">Home</a>
+                                          
+                                        </li>
+                                        <li>
+                                            <a href="/about">About</a>
+                                           
+                                        </li>
+                                        <li><a href="/service">Services</a>
+                                           
+                                        </li>
+                                        <li>
+                                            <a href="/projects">Projects</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="/blog">Blog</a>
+                                           
+                                        </li>
+                                        <li>
+                                            <a href="/contact">contact</a>
+                                           
+                                        </li>
+                                        <li>
+                                            <a href="/booking">Booking</a>
+                                        </li>
+                                        <% if(locals.user){%>
+                                       <li>
+                                        <a href="/user"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-person-circle" viewBox="0 0 16 16" >
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                          </svg> </a>
+                                       </li>
+                                       <li>
+                                              <a href="logout"  style="color: red;">Logout</a>
+                                       </li>
+                                         <%}else{%>    
+                                            <li>   
+                                                     <a href="/login" style="color: green;">Login</a> 
+                                                    </li>
+                                              <%}%>
+                                                     
+                                                  </li>
+                                                 
+                                                    
+                                                
+                                                 
+                                    </ul>
+                                    <!-- end menu area -->
+
+                                    <!-- start attribute navigation -->
+                                    <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
+                                      
+                                       
+                                         
+                                            
+                                         
+
+                                         
+                                    </div>
+                                    <!-- end attribute navigation -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+        </header>
+        
+
+
+
+                                
+
+
+
+
+
