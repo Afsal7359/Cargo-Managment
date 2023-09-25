@@ -1,0 +1,96 @@
+<div class="page">
+    <div class="page-main">
+
+        
+
+      
+
+        <!--app-content open-->
+        <div class="app-content main-content mt-0">
+            <div class="side-app">
+
+                <!-- CONTAINER -->
+                <div class="main-container container-fluid">
+
+                        
+                    <!-- PAGE-HEADER -->
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Blog Page</h1>
+                        </div>
+                        <div class="ms-auto pageheader-btn">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Blog Page</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- PAGE-HEADER END -->
+
+                   
+                   
+
+                   
+
+                 
+<%if (user) { %>
+    <div class="row">
+        <div class="row row-sm">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header border-bottom">
+                        <h3 class="card-title"> user page Datatable</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="editable-responsive-table" class="table editable-table table-nowrap table-bordered table-edit wp-100">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>name</th>
+                                        <th>email</th>
+                                        <th>number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for (let i = 0; i < user.length; i++) { %>
+                                        <% let currentuser = user[i]; %>
+                                
+                                    <tr>
+                                       
+                                            <td><%= i + 1 %></td>
+                                            <td><%= currentuser.name%></td>
+                                            <td><%= currentuser.email%></td>
+                                            <td><%= currentuser.phone%></td>
+                                    </tr>
+                                    <% } %>
+                                    
+                                    
+                                  
+                                           
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Row -->
+<% } else { %>
+    <h1 style="color: red;">Table not found</h1>
+<% } %>
+
+       
+                   
+
+                    
+                </div>
+            </div>
+        </div>
+            <!-- CONTAINER CLOSED -->
+     </div>
+
+</div>

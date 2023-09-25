@@ -1,57 +1,48 @@
-
-<button type="button" class="butn border-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    <span>Launch static backdrop modal</span>
-</button>
-<!-- static Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Book your order</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="/book_order" method="POST">
-                  
-                    <div class="modal-body">
-                        <!-- Add 6 input text fields here -->
-                        <div class="mb-3">
-                        <label for="from" class="form-label">From:</label>
-                        <input type="text" class="form-control" name="frm" id="from" placeholder="Enter From (Location)" required><br>
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card">
+                                <div class="card-header border-bottom">
+                                    <h3 class="card-title">Blog Page</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted"></p>
+                                        <a href="#" class="btn btn-primary" data-bs-target="#modaldemo1" data-bs-toggle="modal">
+                                            Add
+                                        </a>
+                                      
+                      
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                        <label for="destinattion" class="form-label">Destination:</label>
-                        <input type="text" class="form-control" name="destination" id="destinattion" placeholder="Enter Destination (Location)" required><br>
-                        </div>
-                        <div class="mb-3">
-                        <label for="box" class="form-label">Number of boxes:</label>
-                        <input type="text" class="form-control" name="box" id="box" placeholder="Enter Number Of Boxes" required><br>
-                        </div>
-                        <div class="mb-3">
-                        <label for="name" class="form-label">Name:</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required><br>
-                        </div>
-                        <div class="mb-3">
-                        <label for="contact" class="form-label">Contact:</label>
-                        <input type="text" class="form-control" name="contact" id="contact" placeholder="Enter Contact" required><br>
-                        </div>
-                        <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email" required><br>
-                        </div>
-                        <div class="mb-3">
-                        <label for="details" class="form-label">Booking details</label>
-                        <textarea name="booking_details" id="details" cols="30" rows="10" class="form-control"  id="input6" required placeholder="Enter Booking Details"></textarea>
-                        </div>
-                    
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="booking_modal_submit">Submit</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                    </div>
-                </form>
-            </div>
-            
-        </div>
-    </div>
-</div>
                                 
+    <!-- Addmodal -->
+    <div id="modaldemo1" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="addblog" method="POST" enctype="multipart/form-data" >
+                <div class="modal-body">
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="dd/mm/year" name="blogdate" id="blogdate" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="heading" name="bloghead" id="bloghead" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="description" name="blogdescription" id="blogdescription" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="blogs image"  id="formFileLg" name="blogimage" type="file" required>
+                    </div>
+                    <div id="fileSizeError" style="color: red;"></div>
+                    
+                    <button class="btn btn-primary btn-block mt-5" type="submit">Continue</button>
+                </div>
+            </form><!-- modal-body -->
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div><!--Add modal close -->

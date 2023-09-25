@@ -15,5 +15,28 @@ router.post('/addbanner',upload.single('bannerimage'),adminpanel.AddHomeBanner);
 router.post('/editbanner/:id',upload.single("bannerimage"),adminpanel.UpdatedHomeBanner);
 router.get('/deletebanner/:id',adminpanel.DeleteBanner);
 
+//blog page
+router.get('/blog',adminpanel.GetBlog);
+router.post('/addblog',upload.single('blogimage'),adminpanel.AddBlog);
+router.post('/editblog/:id',upload.single("blogimage"),adminpanel.UpdatedBlog);
+router.get('/deleteblog/:id',adminpanel.DeleteBlog);
+
+//gallery page
+router.get('/gallery',adminpanel.Getgallery);
+router.post('/addgallery',upload.single('galleryimage'),adminpanel.Addgallery);
+router.post('/editgallery/:id',upload.single("galleryimage"),adminpanel.Updatedgallery);
+router.get('/deletegallery/:id',adminpanel.Deletegallery);
+
+//contact page
+router.get('/contact',adminpanel.Getcontact);
+router.post('/contactform',adminpanel.Addcontact);
+router.get('/deletecontact/:id',adminpanel.Deletecontact);
+
+//get user details
+router.get('/user',adminpanel.Getuserdetail);
+
+//get cargo booking
+router.get('/booking',adminpanel.getbooking);
+router.post('/cargobooking',adminpanel.Postbooking);
 
 module.exports = router;

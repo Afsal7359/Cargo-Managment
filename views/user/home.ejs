@@ -289,43 +289,6 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS
-        ================================================== -->
-        <section class="pb-0 overflow-visible bg-light">
-            <div class="container">
-                <div class="text-center mb-5 w-95 w-md-90 w-lg-70 w-xl-60 mx-auto wow fadeIn" data-wow-delay="200ms">
-                    <span class="text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block">testimonials</span>
-                    <h2 class="mb-0 font-weight-800 h1">We offer best types of services for our <span class="text-secondary">great customers</span></h2>
-                </div>
-                <div class="bg-dark cover-background py-5 py-lg-8 px-4 rounded testimonial-block">
-                    <div class="testimonial-style3 owl-carousel owl-theme mt-2">
-                        <div class="testmonial-single text-center">
-                            <img src="img/avatar/avatar-01.jpg" alt="..." class="rounded-circle">
-                            <span class="h1 align-top d-block my-4"><i class="ti-quote-left text-primary"></i></span>
-                            <p class="lead mb-4 w-lg-85 w-xl-70 mx-auto text-white">It fits our needs perfectly. I am completely blown away. Very easy to use. Nice work on your cargo. Thanks cargo! Cargo has got everything I need. It makes my life a lot easier. Absolutely wonderful!</p>
-                            <h6 class="letter-spacing-1 text-secondary">Kristin Salas</h6>
-                            <span class="mb-0 text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary">Relations Specialist</span>
-                        </div>
-                        <div class="testmonial-single text-center">
-                            <img src="img/avatar/avatar-02.jpg" alt="..." class="rounded-circle">
-                            <span class="h1 align-top d-block my-4"><i class="ti-quote-left text-primary"></i></span>
-                            <p class="lead mb-4 w-lg-85 w-xl-70 mx-auto text-white">It really saves me time and effort. cargo is exactly what our business has been lacking. I will let my mum know about this, she could really make use of cargo! I use cargo often. It's exactly what I've been looking for.</p>
-                            <h6 class="letter-spacing-1 text-secondary">Dennis Dixon</h6>
-                            <span class="mb-0 text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary">Loadmaster</span>
-                        </div>
-                        <div class="testmonial-single text-center">
-                            <img src="img/avatar/avatar-03.jpg" alt="..." class="rounded-circle">
-                            <span class="h1 align-top d-block my-4"><i class="ti-quote-left text-primary"></i></span>
-                            <p class="lead mb-4 w-lg-85 w-xl-70 mx-auto text-white">Wow what great service, I love it! Needless to say we are extremely satisfied with the results. I would be lost without cargo. Cargo saved my business. I would gladly pay over 600 dollars for cargo. I would be lost without cargo.</p>
-                            <h6 class="letter-spacing-1 text-secondary">James Bulger</h6>
-                            <span class="mb-0 text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary">Crew Supervisor</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- COUNTUPS
         ================================================== -->
         <section class="bg-secondary pb-8">
@@ -369,27 +332,31 @@
 
       
         
-        <!-- FORM
+     <!-- CONTACT-FORM
         ================================================== -->
-        <section class="position-relative corporate-form">
+        <section class="contact-form">
             <div class="container">
-                <div class="row g-0 overlap-column">
-                    <div class="col-lg-6 border-radius-10 bg-img cover-background" data-background="img/bg/contact-bg.jpg"></div>
-                    <div class="col-lg-6">
-                        <div class="common-border bg-white p-1-9 p-md-2-4 p-xl-7 border-radius-10">
-                            <h3 class="mb-1-9 font-weight-800">Read to get <span class="text-secondary">started?</span></h3>
-                            <form class="quform" action="https://upfronthtml.websitelayout.net/quform/contact.php" method="post" enctype="multipart/form-data" onclick="">
+                <div class="section-title mb-2-3 mb-md-6 text-center">
+                    <span class="sub-title wow text-animation" data-in-effect="fadeInRight">Our Contact</span>
+                    <h2 class="h1">Get in touch with us</h2>
+                </div>
+                <div class="contact-wrapper-box">
+                    <div class="row">
+                        <div class="col-lg-6 bg-img cover-background d-none d-lg-block image-hover" data-overlay-dark="0" data-background="img/content/contact-img.jpg"></div>
+                        <div class="col-lg-6">
+                            <div class="contact-form-area">
+                                <h3 class="mb-1-6">Call us or fill the form</h3>
+                                <form  action="admin/contactform" method="post" >
 
-                                    <div class="quform-elements">
 
                                         <div class="row">
 
                                             <!-- Begin Text input element -->
                                             <div class="col-md-6">
-                                                <div class="quform-element form-group">
-                                                    <label for="name">Your Name <span class="quform-required">*</span></label>
+                                                <div class="form-group">
+                                                    <label for="name">Your Name <span >*</span></label>
                                                     <div class="quform-input">
-                                                        <input class="form-control" id="name" type="text" name="name" placeholder="Your name here" />
+                                                        <input class="form-control" id="name" type="text" name="name" placeholder="Your name here" required/>
                                                     </div>
                                                 </div>
 
@@ -401,7 +368,7 @@
                                                 <div class="quform-element form-group">
                                                     <label for="email">Your Email <span class="quform-required">*</span></label>
                                                     <div class="quform-input">
-                                                        <input class="form-control" id="email" type="text" name="email" placeholder="Your email here" />
+                                                        <input class="form-control" id="email" type="text" name="email" placeholder="Your email here" required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -412,7 +379,7 @@
                                                 <div class="quform-element form-group">
                                                     <label for="subject">Your Subject <span class="quform-required">*</span></label>
                                                     <div class="quform-input">
-                                                        <input class="form-control" id="subject" type="text" name="subject" placeholder="Your subject here" />
+                                                        <input class="form-control" id="subject" type="text" name="subject" placeholder="Your subject here" required/>
                                                     </div>
                                                 </div>
 
@@ -424,7 +391,7 @@
                                                 <div class="quform-element form-group">
                                                     <label for="phone">Contact Number</label>
                                                     <div class="quform-input">
-                                                        <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here" />
+                                                        <input class="form-control" id="phone" type="number" name="number" placeholder="Your phone here" required />
                                                     </div>
                                                 </div>
 
@@ -434,39 +401,22 @@
                                             <!-- Begin Textarea element -->
                                             <div class="col-md-12">
                                                 <div class="quform-element form-group">
-                                                    <label for="message">Message <span class="quform-required">*</span></label>
+                                                    <label for="message">Message</label>
                                                     <div class="quform-input">
-                                                        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us a few words"></textarea>
+                                                        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us a few words" required></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- End Textarea element -->
 
-                                            <!-- Begin Captcha element -->
-                                            <div class="col-md-12">
-                                                <div class="quform-element">
-                                                    <div class="form-group">
-                                                        <div class="quform-input">
-                                                            <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Type the below word" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="quform-captcha">
-                                                            <div class="quform-captcha-inner">
-                                                                <img src="quform/images/captcha/courier-new-light.png" alt="...">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Captcha element -->
+                                  
 
                                             <!-- Begin Submit button -->
                                             <div class="col-md-12">
                                                 <div class="quform-submit-inner">
                                                     <button class="butn theme butn-md" type="submit"><span>Send Message</span></button>
                                                 </div>
-                                                <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
+                                                
                                             </div>
                                             <!-- End Submit button -->
 
@@ -475,6 +425,7 @@
                                     </div>
 
                                 </form>
+                            </div>
                         </div>
                     </div>
                 </div>

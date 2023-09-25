@@ -1,4 +1,6 @@
 const userlogin = require("../models/userlogin");
+const blog = require("../models/blogs");
+const gallery = require("../models/gallery");
 
 
 
@@ -110,18 +112,20 @@ module.exports={
 
     userBlog: async(req,res)=>{
         try{
+            const blogs= await blog.find()
             let user=req.session.userloggedIn
-            res.render('user/blog',{user});
+            res.render('user/blog',{user,blogs});
         }catch(err){
             console.log(err);
     }
 
     },
 
-    userProject: async(req,res)=>{
+    usergallery: async(req,res)=>{
         try{
+            const gallerys= await gallery.find()
             let user=req.session.userloggedIn
-            res.render('user/project',{user});
+            res.render('user/gallery',{user,gallerys});
         }catch(err){
             console.log(err);
     }

@@ -25,145 +25,31 @@
                     <h2 class="h1">Read Our Latest News</h2>
                 </div>
                 <div class="row mt-n5">
+                    <% for (let i = 0; i < blogs.length; i++) { %>
+                        <% let currentblogs = blogs[i]; %>
                     <div class="col-md-6 col-lg-4 mt-5 wow fadeIn" data-wow-delay="200ms">
                         <article>
                             <div class="blog-style01">
                                 <div class="inner-box">
                                     <div class="mb-3 image-hover">
-                                        <img src="img/blog/blog-01.jpg" alt="..">
-                                        <span class="post-date">10 <br> Feb</span>
+                                        <img src="<%=currentblogs.blogimage%>" alt="..">
+                                        <span class="post-date"><%=currentblogs.blogdate%></span>
                                     </div>
                                     <div class="position-relative">
-                                        <ul class="d-flex mb-3 list-unstyled post-info">
-                                            <li class="display-30 me-4 position-relative"><i class="far fa-folder pe-2"></i>01 Comments</li>
-                                            <li class="display-30 me-0"><a href="#!"><i class="far fa-user pe-2"></i>By Admin</a></li>
-                                        </ul>
+                                       
                                     </div>
-                                    <h5 class="mb-3"><a href="/blog">New design for cargo and warehouse</a></h5>
-                                    <a href="/blog" class="butn sm"><span>Read More</span></a>
+                                    <h5 class="mb-3"><a href="/blog"><%=currentblogs.bloghead%></a></h5>
+                                    <p class="mb-3"><a href="/blog"><%=currentblogs.blogdescription%></a></p>
+
                                 </div>
                             </div>
                         </article>
                     </div>
-                    <div class="col-md-6 col-lg-4 mt-5 wow fadeIn" data-wow-delay="400ms">
-                        <article>
-                            <div class="blog-style01">
-                                <div class="inner-box">
-                                    <div class="mb-3 image-hover">
-                                        <img src="img/blog/blog-02.jpg" alt="..">
-                                        <span class="post-date">22 <br> Feb</span>
-                                    </div>
-                                    <div class="position-relative">
-                                        <ul class="d-flex mb-3 list-unstyled post-info">
-                                            <li class="display-30 me-4 position-relative"><i class="far fa-folder pe-2"></i>01 Comments</li>
-                                            <li class="display-30 me-0"><a href="#!"><i class="far fa-user pe-2"></i>By Admin</a></li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="mb-3"><a href="/blog">All the approaches the COVID19 impacts cargo</a></h5>
-                                    <a href="/blog" class="butn sm"><span>Read More</span></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mt-5 wow fadeIn" data-wow-delay="600ms">
-                        <article>
-                            <div class="blog-style01">
-                                <div class="inner-box">
-                                    <div class="mb-3 image-hover">
-                                        <img src="img/blog/blog-03.jpg" alt="..">
-                                        <span class="post-date">29 <br> Feb</span>
-                                    </div>
-                                    <div class="position-relative">
-                                        <ul class="d-flex mb-3 list-unstyled post-info">
-                                            <li class="display-30 me-4 position-relative"><i class="far fa-folder pe-2"></i>01 Comments</li>
-                                            <li class="display-30 me-0"><a href="#!"><i class="far fa-user pe-2"></i>By Admin</a></li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="mb-3"><a href="/blog">Why can we love our logistic task so much?</a></h5>
-                                    <a href="/blog" class="butn sm"><span>Read More</span></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mt-5 wow fadeIn" data-wow-delay="800ms">
-                        <article>
-                            <div class="blog-style01">
-                                <div class="inner-box">
-                                    <div class="mb-3 image-hover">
-                                        <img src="img/blog/blog-06.jpg" alt="..">
-                                        <span class="post-date">29 <br> Feb</span>
-                                    </div>
-                                    <div class="position-relative">
-                                        <ul class="d-flex mb-3 list-unstyled post-info">
-                                            <li class="display-30 me-4 position-relative"><i class="far fa-folder pe-2"></i>01 Comments</li>
-                                            <li class="display-30 me-0"><a href="#!"><i class="far fa-user pe-2"></i>By Admin</a></li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="mb-3"><a href="/blog">Taking your sales to the next level with faster delivery</a></h5>
-                                    <a href="/blog" class="butn sm"><span>Read More</span></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mt-5 wow fadeIn" data-wow-delay="1000ms">
-                        <article>
-                            <div class="blog-style01">
-                                <div class="inner-box">
-                                    <div class="mb-3 image-hover">
-                                        <img src="img/blog/blog-04.jpg" alt="...">
-                                        <span class="post-date">10 <br> Feb</span>
-                                    </div>
-                                    <div class="position-relative">
-                                        <ul class="d-flex mb-3 list-unstyled post-info">
-                                            <li class="display-30 me-4 position-relative"><i class="far fa-folder pe-2"></i>01 Comments</li>
-                                            <li class="display-30 me-0"><a href="#!"><i class="far fa-user pe-2"></i>By Admin</a></li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="mb-3"><a href="/blog">How will you know success when it show up?</a></h5>
-                                    <a href="/blog" class="butn sm"><span>Read More</span></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mt-5 wow fadeIn" data-wow-delay="1200ms">
-                        <article>
-                            <div class="blog-style01">
-                                <div class="inner-box">
-                                    <div class="mb-3 image-hover">
-                                        <img src="img/blog/blog-05.jpg" alt="..">
-                                        <span class="post-date">22 <br> Feb</span>
-                                    </div>
-                                    <div class="position-relative">
-                                        <ul class="d-flex mb-3 list-unstyled post-info">
-                                            <li class="display-30 me-4 position-relative"><i class="far fa-folder pe-2"></i>01 Comments</li>
-                                            <li class="display-30 me-0"><a href="#!"><i class="far fa-user pe-2"></i>By Admin</a></li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="mb-3"><a href="/blog">If your business needs cargo shipping, we can help!</a></h5>
-                                    <a href="/blog" class="butn sm"><span>Read More</span></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                    <% }%>
+                 
 
                 </div>
 
-                <div class="row wow fadeIn" data-wow-delay="200ms">
-                    <div class="col-sm-12">
-                        <!-- start pager  -->
-                        <div class="text-center mt-2-9">
-                            <div class="pagination">
-                                <ul>
-                                    <li><a href="#!" class="me-3"><i class="fas fa-long-arrow-alt-left"></i></a></li>
-                                    <li class="active"><a href="#!" class="me-2">1</a></li>
-                                    <li><a href="#!" class="me-2">2</a></li>
-                                    <li><a href="#!" class="me-3">3</a></li>
-                                    <li><a href="#!"><i class="fas fa-long-arrow-alt-right"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- end pager -->
-                    </div>
-                </div>
+               
             </div>
         </section>
