@@ -7,7 +7,7 @@ router.get('/',usercontroller.Userhome)
 
 router.post('/userregister', usercontroller.userregister);
 
-router.get('/login',usercontroller.loginpage);
+router.get('/userlogin',usercontroller.loginpage);
 
 router.post('/userlogin',usercontroller.userlogin);
 
@@ -26,6 +26,8 @@ router.get('/blog',usercontroller.userBlog);
 router.get('/user',usercontroller.userinfo);
 
 router.get('/booking',usercontroller.cargobooking);
+
+router.get('/servicedetail/:id',usercontroller.servicedetail);
 
 
 module.exports = router;

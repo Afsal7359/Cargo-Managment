@@ -34,7 +34,7 @@
                                     <span class="mb-4 d-block"><img src="<%= currentService.serviceimage %>" alt="..."></span>
                                     <h3 class="h5 mb-3 mt-2"><a href="#!"><%= currentService.servicehead %></a></h3>
                                     <div class="card-info">
-                                        <p class="mb-0"><%= currentService.servicedescription %></p>
+                                        <a href="servicedetail/<%=currentService._id%>" class="font-weight-600 text-secondary text-primary-hover">more Details<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -43,4 +43,5 @@
                 </div>
             </div>
         </section>
+
         

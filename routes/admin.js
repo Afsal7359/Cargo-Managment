@@ -2,47 +2,50 @@ var express = require('express');
 const admincontroller = require('../controller/admincontroller');
 var router = express.Router();
 const upload = require('../util/multer');
-const adminpanel = require('../controller/adminpanel')
-// const adminauth  = require('../middilewears/Adminauth');
+const adminauth  = require('../middlewears/Adminauth');
+const adminpanel = require('../controller/adminpanel');
 
 
 /* GET home page. */
-router.get('/', admincontroller.admindashboard);
+router.get('/', adminauth.adminauth,admincontroller.admindashboard);
+router.post('/login',admincontroller.PostLogin);
+router.get('/login',admincontroller.GetLogin);
+router.get('/logout',adminauth.adminauth,admincontroller.AdminLogout)
 
 //Home Banner
-router.get('/banner',adminpanel.GetHomeBanner);
-router.post('/addbanner',upload.single('bannerimage'),adminpanel.AddHomeBanner);
-router.post('/editbanner/:id',upload.single("bannerimage"),adminpanel.UpdatedHomeBanner);
-router.get('/deletebanner/:id',adminpanel.DeleteBanner);
+router.get('/banner',adminauth.adminauth,adminpanel.GetHomeBanner);
+router.post('/addbanner',upload.single('bannerimage'),adminauth.adminauth,adminpanel.AddHomeBanner);
+router.post('/editbanner/:id',upload.single("bannerimage"),adminauth.adminauth,adminpanel.UpdatedHomeBanner);
+router.get('/deletebanner/:id',adminauth.adminauth,adminpanel.DeleteBanner);
 
 //blog page
-router.get('/blog',adminpanel.GetBlog);
-router.post('/addblog',upload.single('blogimage'),adminpanel.AddBlog);
-router.post('/editblog/:id',upload.single("blogimage"),adminpanel.UpdatedBlog);
-router.get('/deleteblog/:id',adminpanel.DeleteBlog);
+router.get('/blog',adminauth.adminauth,adminpanel.GetBlog);
+router.post('/addblog',upload.single('blogimage'),adminauth.adminauth,adminpanel.AddBlog);
+router.post('/editblog/:id',upload.single("blogimage"),adminauth.adminauth,adminpanel.UpdatedBlog);
+router.get('/deleteblog/:id',adminauth.adminauth,adminpanel.DeleteBlog);
 
 //gallery page
-router.get('/gallery',adminpanel.Getgallery);
-router.post('/addgallery',upload.single('galleryimage'),adminpanel.Addgallery);
-router.post('/editgallery/:id',upload.single("galleryimage"),adminpanel.Updatedgallery);
-router.get('/deletegallery/:id',adminpanel.Deletegallery);
+router.get('/gallery',adminauth.adminauth,adminpanel.Getgallery);
+router.post('/addgallery',upload.single('galleryimage'),adminauth.adminauth,adminpanel.Addgallery);
+router.post('/editgallery/:id',upload.single("galleryimage"),adminauth.adminauth,adminpanel.Updatedgallery);
+router.get('/deletegallery/:id',adminauth.adminauth,adminpanel.Deletegallery);
 
 //contact page
-router.get('/contact',adminpanel.Getcontact);
-router.post('/contactform',adminpanel.Addcontact);
-router.get('/deletecontact/:id',adminpanel.Deletecontact);
+router.get('/contact',adminauth.adminauth,adminpanel.Getcontact);
+router.post('/contactform',adminauth.adminauth,adminpanel.Addcontact);
+router.get('/deletecontact/:id',adminauth.adminauth,adminpanel.Deletecontact);
 
 //get user details
-router.get('/user',adminpanel.Getuserdetail);
+router.get('/user',adminauth.adminauth,adminpanel.Getuserdetail);
 
 //get cargo booking
-router.get('/booking',adminpanel.getbooking);
-router.post('/cargobooking',adminpanel.Postbooking);
+router.get('/booking',adminauth.adminauth,adminpanel.getbooking);
+router.post('/cargobooking',adminauth.adminauth,adminpanel.Postbooking);
 
 //blog page
-router.get('/service',adminpanel.Getservice);
-router.post('/addservice',upload.single('serviceimage'),adminpanel.Addservice);
-router.post('/editservice/:id',upload.single("serviceimage"),adminpanel.Updatedservice);
-router.get('/deleteservice/:id',adminpanel.Deleteservice);
+router.get('/service',adminauth.adminauth,adminpanel.Getservice);
+router.post('/addservice',upload.single('serviceimage'),adminauth.adminauth,adminpanel.Addservice);
+router.post('/editservice/:id',upload.single("serviceimage"),adminauth.adminauth,adminpanel.Updatedservice);
+router.get('/deleteservice/:id',adminauth.adminauth,adminpanel.Deleteservice);
 
 module.exports = router;

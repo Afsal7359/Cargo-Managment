@@ -14,10 +14,10 @@
 		<meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
 
         <!-- TITLE -->
-		<title></title>
+		<title>PKM CARGO ADMIN PANEL</title>
 
         <!-- FAVICON -->
-        <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo-2.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="/img/pkm-logo.png" />
 
         <!-- BOOTSTRAP CSS -->
         <link id="style" href="/assets2/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -44,9 +44,12 @@
   
 
         
-        <%- include('partials/adminheader') %> 
+        <%if(locals.adminlogin||locals.error){%>
+            <%- body %>     
+         <%}else{%>
+            <%- include('partials/adminheader') %> 
          <%- body %>
-       
+         <%}%>
 
     </body>
 

@@ -1,9 +1,9 @@
 module.exports={
     adminauth:(req,res,next)=>{
-        if(req.session.userloggedIn){
+        if(req.session.adminloggedIn){
             next()
         }else{
-            res.redirect('/login')
+            res.redirect('/admin/login')
         }
     }
 }

@@ -49,7 +49,7 @@ module.exports={
 
             if(!passwordCorrect){
                 req.session.usrlogerr = 'incorrect password .....';
-                res.redirect('/login')
+                res.redirect('/userlogin')
             }else{
                 req.session.userloginuser=loginuser;
                  console.log(email,loginuser);
@@ -147,8 +147,17 @@ module.exports={
         }catch(err){
             console.log(err);
         }
-    }
+    },
 
+    servicedetail:async(req,res)=>{
+        try{
+        const {id}=req.params
+        const services = await service.findById(id);
+        res.render('user/servicedetails',{services})
+      }catch(err){
+        console.log(err)
+      }
+    }, 
 
 
 
