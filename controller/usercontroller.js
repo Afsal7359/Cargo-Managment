@@ -1,7 +1,8 @@
 const userlogin = require("../models/userlogin");
 const blog = require("../models/blogs");
 const gallery = require("../models/gallery");
-
+const banner = require('../models/homebanner')
+const service = require('../models/service')
 
 
 module.exports={
@@ -73,7 +74,8 @@ module.exports={
         try{
         let user=req.session.userloggedIn
         let data=req.session.userloginuser
-            res.render('user/home',{user,data});
+        const banners= await banner.find()
+            res.render('user/home',{user,data,banners});
         }catch(err){
             console.log(err);
     }
@@ -92,8 +94,9 @@ module.exports={
 
     userService: async(req,res)=>{
         try{
+            const services = await service.find()
             let user=req.session.userloggedIn
-            res.render('user/service',{user});
+            res.render('user/service',{user,services});
         }catch(err){
             console.log(err);
     }

@@ -5,6 +5,7 @@ const gallery = require('../models/gallery');
 const contact = require('../models/contact');
 const userlogin = require('../models/userlogin');
 const booking = require('../models/booking');
+const service = require('../models/service');
 
 module.exports={
 
@@ -253,6 +254,71 @@ module.exports={
         }catch(err){
             console.log(err);
         }
-    }
+    },
+
+    Getservice: async(req,res)=>{
+        try{
+        const services= await service.find()
+        res.render('admin/service',{layout:"adminlayout",services})
+        }catch(err){
+            console.log(err);
+        }
+    },
+    Addservice:async(req,res)=>{
+        try{
+        const result = await cloudinary.uploader.upload(req.file.path);
+        const imageurl = result.url
+        const {servicehead,servicedescription}=req.body;
+        await service.create({servicehead,servicedescription,serviceimage:imageurl});
+        console.log("service Added sucessfully");
+        res.redirect('/admin/service');
+        }catch(err){
+            console.log(err);
+        }
+    },
+    Updatedservice: async(req,res)=>{
+      try{
+        const{id}=req.params;
+        const {servicehead,servicedescription}=req.body;
+        let imageurl=null;
+
+        if(req.file){
+            const result= await cloudinary.uploader.upload(req.file.path);
+            imageurl=result.url;
+        }
+        const updatedFields= {};
+
+       
+        if(servicehead){
+            updatedFields.servicehead=servicehead;
+        }
+        if(servicedescription){
+            updatedFields.servicedescription=servicedescription;
+        }
+        if(imageurl){
+            updatedFields.serviceimage = imageurl;
+        }
+
+        const updatedservice = await service.findOneAndUpdate(
+            {_id:id},
+            {$set:updatedFields},
+            {new:true}
+        );
+        console.log("service updated ...");
+        res.redirect('/admin/service')
+      }catch(err){
+        console.log(err);
+      }
+    },
+    Deleteservice:async(req,res)=>{
+        try{
+            const {id}=req.params;
+            await service.findByIdAndDelete({_id:id});
+            console.log(' service Deleted Sucessfully');
+            res.redirect('/admin/service')
+        }catch(err){
+            console.log(err)
+        }
+    },
 
 }

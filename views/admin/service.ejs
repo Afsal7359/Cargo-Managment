@@ -1,0 +1,282 @@
+<div class="page">
+    <div class="page-main">
+
+        
+
+      
+
+        <!--app-content open-->
+        <div class="app-content main-content mt-0">
+            <div class="side-app">
+
+                <!-- CONTAINER -->
+                <div class="main-container container-fluid">
+
+                        
+                    <!-- PAGE-HEADER -->
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">service Page</h1>
+                        </div>
+                        <div class="ms-auto pageheader-btn">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">service Page</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">service</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- PAGE-HEADER END -->
+
+                   
+                   
+
+                   
+
+                    <!-- row -->
+<div class="row">
+    <div class="col-lg-6 col-md-6">
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h3 class="card-title">service Page</h3>
+            </div>
+            <div class="card-body">
+                <p class="text-muted"></p>
+                    <a href="#" class="btn btn-primary" data-bs-target="#modaldemo1" data-bs-toggle="modal">
+                        Add
+                    </a>
+                  
+  
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /row -->
+<%if (services) { %>
+    <div class="row">
+        <div class="row row-sm">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header border-bottom">
+                        <h3 class="card-title"> services page Datatable</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="editable-responsive-table" class="table editable-table table-nowrap table-bordered table-edit wp-100">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Date</th>
+                                        <th>Heading</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for (let i = 0; i < services.length; i++) { %>
+                                        <% let currentservices = services[i]; %>
+                                
+                                    <tr>
+                                       
+                                            <td><%= i + 1 %></td>
+                                            <td><%= currentservices.servicehead%></td>
+                                            <td><%= currentservices.servicedescription%></td>
+                                            <td><img src="<%= currentservices.serviceimage %>" style="height: 5em;"></td>
+                                            <td>
+                                                <div class="card-body">
+                                                    <p class="text-muted"></p>
+                                                    <a  class="btn btn-primary" data-bs-target="#modaldemo2_<%=i%>" data-bs-toggle="modal">Edit</a>
+                                                   <!-- data-bs-target="#modaldemo3_<%= i %>" data-bs-toggle="modal">Delete</a> -->
+                                                   <!-- <a class="btn btn-primary">   <button class="btn btn-danger" onclick="confirmDelete()">Delete</button></a> -->
+                                                   <a  class="btn btn-danger" data-bs-target="#modaldemo3_<%=i%>" data-bs-toggle="modal">Delete </a>
+                                                    
+                                               
+                                                </div> 
+                                                
+                                                
+                                            </td>
+                                     
+                                    </tr>
+                                    <% } %>
+                                    
+                                    
+                                  
+                                           
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Row -->
+<% } else { %>
+    <h1 style="color: red;">Table not found</h1>
+<% } %>
+
+       
+                   
+
+                    
+                </div>
+            </div>
+        </div>
+            <!-- CONTAINER CLOSED -->
+     </div>
+
+
+    
+    <!-- Addmodal -->
+    <div id="modaldemo1" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="addservice" method="POST" enctype="multipart/form-data" >
+                <div class="modal-body">
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                   
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="heading" name="servicehead" id="servicehead" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control" placeholder="description" name="servicedescription" id="servicedescription" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="services image"  id="formFileLg" name="serviceimage" type="file" required>
+                    </div>
+                    <div id="fileSizeError" style="color: red;"></div>
+                    
+                    <button class="btn btn-primary btn-block mt-5" type="submit">Continue</button>
+                </div>
+            </form><!-- modal-body -->
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div><!--Add modal close -->
+
+
+           
+    <!-- Editmodal -->
+    <% for (let i = 0; i < services.length; i++) { %>
+        <% let currentservices = services[i]; %>
+        <div id="modaldemo2_<%=i%>" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form action="editservice/<%=currentservices._id%>"  method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+                        <div class="modal-body">
+                            <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="date" value="<%= currentservices.servicedate%>" name="servicedate" id="servicedate" >
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="services heading " value="<%= currentservices.servicehead%>" name="servicehead" id="servicehead" >
+                            </div>
+                            <div class="form-group">
+                                <textarea type="text" class="form-control" placeholder="services description"  name="servicedescription" id="servicedescription" ><%= currentservices.servicedescription%></textarea>
+                            </div>
+                            <img src="<%= currentservices.serviceimage %>"  id="selectedImage<%= currentservices._id %>" style="height: 14em;">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="services image" id="formFileLg_<%= i %>" value="selectedImage<%= currentservices.serviceimage %>" name="serviceimage" type="file" onchange="updateImagePreview(this, 'selectedImage<%= currentservices._id %>')">
+                            </div>
+                            <div id="fileSizeError_<%=i%>" style="color: red;"></div>
+                            <button class="btn btn-primary btn-block mt-5" type="submit">Save</button>
+                        </div>
+                    </form><!-- modal-body -->
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- edit modal close -->
+        <% } %>
+
+
+        <% for (let i = 0; i < services.length; i++) { %>
+            <% let currentservices = services[i]; %>
+      <!-- Delete Modal -->
+      <div id="modaldemo3_<%=i%>" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               
+                <div class="modal-body">
+                    <div class="modal-header" >
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmation </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                       </div>
+                       <div class="modal-body">
+                        <p>Are you sure you want to delete?</p>
+                      </div>
+                      <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" id="close-modal">No</button>
+                        <a href="deleteservice/<%=currentservices._id %>"  class="btn btn-danger" type="button">Yes</a>
+                       </div>
+            
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div>
+   </div>
+
+    <!-- Delete Modal Close -->
+
+
+<% } %>
+
+       
+
+
+    
+  
+   
+
+</div>
+<% for (let i = 0; i < services.length; i++) { %>
+    <script>
+        function validateForm(inputId, errorId) {
+            var fileInput = document.getElementById(inputId);
+            var fileSize = fileInput.files[0].size / 1024; // Size in MB
+    
+            if (fileSize > 1024) { // 10 MB
+                document.getElementById(errorId).innerHTML = 'File size must be less than 1 MB.';
+                fileInput.value = ''; // Clear the input
+                return false; // Prevent form submission
+            } else {
+                document.getElementById(errorId).innerHTML = '';
+                return true; // Allow form submission
+            }
+        }
+    
+        function updateImagePreview(input, imageId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById(imageId).src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    
+        document.getElementById('formFileLg').addEventListener('change', function () {
+            var fileInput = this;
+            var fileSize = fileInput.files[0].size /  1024; // Size in MB
+    
+            if (fileSize > 1024) { // 10 MB
+                document.getElementById('fileSizeError').innerHTML = 'File size must be less than 1 MB.';
+                fileInput.value = ''; // Clear the input
+            } else {
+                document.getElementById('fileSizeError').innerHTML = '';
+            }
+        });
+    
+        // Add event listeners for the "Edit" modal file inputs
+      
+        document.getElementById('formFileLg_<%= i %>').addEventListener('change', function () {
+            validateForm('formFileLg_<%= i %>', 'fileSizeError_<%= i %>');
+        });
+      
+    </script>
+    <% } %>

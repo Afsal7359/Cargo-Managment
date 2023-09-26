@@ -26,72 +26,21 @@
                     <h2 class="h1">Trusted for our services</h2>
                 </div>
                 <div class="row mt-n1-9">
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="card card-style1">
-                            <div class="card-body">
-                                <span class="mb-4 d-block"><img src="img/icons/icon-01-dark.png" alt="..."></span>
-                                <h3 class="h5 mb-3 mt-2"><a href="#!">Air Freight</a></h3>
-                                <div class="card-info">
-                                    <p class="mb-0">The services of our company to fulfill the expectations of our great customers.</p>
+                    <% for (let i = 0; i < services.length; i++) { %>
+                        <% let currentService = services[i]; %>
+                        <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="card card-style1">
+                                <div class="card-body">
+                                    <span class="mb-4 d-block"><img src="<%= currentService.serviceimage %>" alt="..."></span>
+                                    <h3 class="h5 mb-3 mt-2"><a href="#!"><%= currentService.servicehead %></a></h3>
+                                    <div class="card-info">
+                                        <p class="mb-0"><%= currentService.servicedescription %></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="card card-style1">
-                            <div class="card-body">
-                                <span class="mb-4 d-block"><img src="img/icons/icon-02-dark.png" alt="..."></span>
-                                <h3 class="h5 mb-3 mt-2"><a href="#!">Road Freight</a></h3>
-                                <div class="card-info">
-                                    <p class="mb-0">The services of our company to fulfill the expectations of our great customers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="600ms">
-                        <div class="card card-style1">
-                            <div class="card-body">
-                                <span class="mb-4 d-block"><img src="img/icons/icon-03-dark.png" alt="..."></span>
-                                <h3 class="h5 mb-3 mt-2"><a href="#!">Ocean Freight</a></h3>
-                                <div class="card-info">
-                                    <p class="mb-0">The services of our company to fulfill the expectations of our great customers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="800ms">
-                        <div class="card card-style1">
-                            <div class="card-body">
-                                <span class="mb-4 d-block"><img src="img/icons/icon-04-dark.png" alt="..."></span>
-                                <h3 class="h5 mb-3 mt-2"><a href="#!">Rail Freight</a></h3>
-                                <div class="card-info">
-                                    <p class="mb-0">The services of our company to fulfill the expectations of our great customers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="1000ms">
-                        <div class="card card-style1">
-                            <div class="card-body">
-                                <span class="mb-4 d-block"><img src="img/icons/icon-05-dark.png" alt="..."></span>
-                                <h3 class="h5 mb-3 mt-2"><a href="#!">Warehousing</a></h3>
-                                <div class="card-info">
-                                    <p class="mb-0">The services of our company to fulfill the expectations of our great customers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4 mt-1-9 wow fadeInUp" data-wow-delay="1200ms">
-                        <div class="card card-style1">
-                            <div class="card-body">
-                                <span class="mb-4 d-block"><img src="img/icons/icon-06-dark.png" alt="..."></span>
-                                <h3 class="h5 mb-3 mt-2"><a href="#!">Logistic Solution</a></h3>
-                                <div class="card-info">
-                                    <p class="mb-0">The services of our company to fulfill the expectations of our great customers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
         </section>
+        

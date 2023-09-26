@@ -39,4 +39,10 @@ router.get('/user',adminpanel.Getuserdetail);
 router.get('/booking',adminpanel.getbooking);
 router.post('/cargobooking',adminpanel.Postbooking);
 
+//blog page
+router.get('/service',adminpanel.Getservice);
+router.post('/addservice',upload.single('serviceimage'),adminpanel.Addservice);
+router.post('/editservice/:id',upload.single("serviceimage"),adminpanel.Updatedservice);
+router.get('/deleteservice/:id',adminpanel.Deleteservice);
+
 module.exports = router;

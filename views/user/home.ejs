@@ -2,7 +2,9 @@
         ================================================== -->
         <section class="full-screen top-position1 p-0">
             <div class="slider-fade1 owl-carousel owl-theme w-100 min-vh-100">
-                <div class="item bg-img cover-background left-overlay-dark" data-overlay-dark="85" data-background="img/banner/video-cover.jpg">
+                <% for (let i = 0; i < banners.length; i++) { %>
+                    <% let currentBanners = banners[i]; %>
+                <div class="item bg-img cover-background left-overlay-dark" data-overlay-dark="85" data-background="<%= currentBanners.bannerimage %>">
                     <div class="container d-flex flex-column">
                         <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
                             <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 pt-6 pb-12 py-sm-6">
@@ -16,48 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item bg-img cover-background left-overlay-dark" data-overlay-dark="85" data-background="img/banner/banner-01.jpg">
-                    <div class="container d-flex flex-column">
-                        <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
-                            <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 pt-6 pb-12 py-sm-6">
-                                <span class="text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary small-title">Package safety.</span>
-                                <h2 class="text-white mb-2-2 display-3 font-weight-800 title">Secure for all courier & <span class="text-primary">packages.</span></h2>
-                                <a href="/about" class="butn shadow-none me-2 my-1 my-sm-0">
-                                    <span>Learn More</span>
-                                </a>
-                                <a href="/contact" class="butn secondary my-1 my-sm-0">How We Work</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item bg-img cover-background left-overlay-dark" data-overlay-dark="85" data-background="img/banner/banner-02.jpg">
-                    <div class="container d-flex flex-column">
-                        <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
-                            <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 pt-6 pb-12 py-sm-6">
-                                <span class="text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary small-title">Fast and reliable.</span>
-                                <h2 class="text-white mb-2-2 display-3 font-weight-800 title">We transport all around <span class="text-primary">the world.</span></h2>
-                                <a href="/about" class="butn me-2 my-1 my-sm-0">
-                                    <span>Learn More</span>
-                                </a>
-                                <a href="/contact" class="butn secondary my-1 my-sm-0">How We Work</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-                <div class="item bg-img cover-background left-overlay-dark" data-overlay-dark="85" data-background="img/banner/banner-03.jpg">
-                    <div class="container d-flex flex-column">
-                        <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
-                            <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 pt-6 pb-12 py-sm-6">
-                                <span class="text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary small-title">Package safety.</span>
-                                <h2 class="text-white mb-2-2 display-3 font-weight-800 title">Secure for all courier & <span class="text-primary">packages.</span></h2>
-                                <a href="/about" class="butn shadow-none me-2 my-1 my-sm-0">
-                                    <span>Learn More</span>
-                                </a>
-                                <a href="/contact" class="butn secondary my-1 my-sm-0">How We Work</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% } %>
             </div>
         </section>       
     
@@ -68,13 +29,13 @@
                 <div class="row clearfix align-items-xl-center">
                     <div class="col-lg-6 text-column mb-2-9 mb-lg-0 wow fadeIn" data-wow-delay="200ms">
                         <div class="pe-xl-2-9">
-                            <h2 class="h1 mb-4">Drives in goods move anywhere <span class="text-secondary">in the world.</span></h2>
-                            <p class="pb-3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                            <h2 class="h1 mb-4">WE OFFER QUICK &  <span class="text-secondary"> POWERFUL SOLUTION FOR TRANSPORT</span></h2>
+                            <p class="pb-3">The arrival and departure times of flights are highly reliable, as airlines tend to be very on top of their schedules. Even missing a flight wouldn’t cause much delay as there are usually flights departing every hour.</p>
                             <div class="clearfix d-sm-flex align-items-center mb-2-6">
                                 <ul class="list-style2 mb-5 mb-sm-0">
                                     <li>On time delivery.</li>
                                     <li>Real time tracking.</li>
-                                    <li>Warehousing operation.</li>
+                                    <li>Quickest Cargo</li>
                                 </ul>
                                 <div class="since">
                                     <span class="txt text-center text-white bg-dark">Since <br>1978</span>
@@ -88,10 +49,10 @@
                     <div class="col-lg-6 position-relative wow fadeIn" data-wow-delay="400ms">
                         <div class="row align-items-center ps-lg-1-9 position-relative z-index-9">
                             <div class="col-sm-7 d-none d-sm-block">
-                                <img src="img/content/about-09.jpg" class="rounded" alt="...">
+                                <img src="img/7.jpeg" class="rounded" alt="...">
                             </div>
                             <div class="col-sm-5 text-center text-sm-start">
-                                <img src="img/content/about-10.jpg" class="rounded" alt="...">
+                                <img src="img/2.jpeg" class="rounded" alt="...">
                                 <div class="text-center mt-4">
                                     <a href="/service" class="font-weight-600">View All Services<i class="ti-arrow-right ms-2 align-middle display-30"></i></a>
                                 </div>
@@ -188,12 +149,7 @@
                                         <h6>24/7 Support</h6>
                                     </div>
                                 </li>
-                                <li class="tab4">
-                                    <div class="tab-box">
-                                        <i class="fa-solid fa-shield-halved"></i>
-                                        <h6>Insurance</h6>
-                                    </div>
-                                </li>
+                                
 
                             </ul>
                             <div class="resp-tabs-container hor_1">
@@ -201,18 +157,18 @@
                                     <div class="row align-items-xl-center">
                                         <div class="col-lg-6 col-xl-5 mb-1-9 mb-lg-0">
                                             <div class="pr-xxl-4 text-center text-lg-left">
-                                                <img src="img/content/tab-content-04.jpg" class="border-radius-10" alt="...">
+                                                <img src="img/image1.jpg" class="border-radius-10" alt="...">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 offset-xl-1">
                                             <div class="pl-lg-3 pl-xl-0">
                                                 <h3 class="mb-3">Transparent Pricing</h3>
-                                                <p class="text-secondary lead font-weight-600">“Vivamus ut tellus sed tellus finibus egestas. Mauris adipiscing aliquet et nisl nec eleifend adipiscing elit.”</p>
-                                                <p class="mb-4">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, architecto ullam tenetur quia nemo ratione.</p>
+                                                <p class="text-secondary lead font-weight-600">“ At Pkm Cargo , we believe in clarity and simplicity when it comes to pricing. We understand that transparency is essential in building trust with our valued customers. That's why we've designed our pricing structure to be as straightforward and honest as possible. ”</p>
+                                                <p class="mb-4">Ready to get started? Request a quote today and discover how easy and transparent cargo booking can be with Pkm Cargo.</p>
                                                 <ul class="list-style2 mb-0">
-                                                    <li>Maecenas vitae luctus nibh. Curabitur pharetra luctus est, sit amet aliquam ex posuere id.</li>
-                                                    <li>Maecenas pharetra ante vel est lobortis</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur.</li>
+                                                    <li>No Hidden Fees</li>
+                                                    <li>Competitive Rates</li>
+                                                    <li>Customized Solutions</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -223,18 +179,18 @@
                                         <div class="col-lg-6 mt-1-9 mt-lg-0 order-2 order-lg-1">
                                             <div class="pr-lg-3 pr-xl-0">
                                                 <h3 class="mb-3">On Time Delivery</h3>
-                                                <p class="text-secondary lead font-weight-600">“Vivamus ut tellus sed tellus finibus egestas. Mauris adipiscing aliquet et nisl nec eleifend adipiscing elit.”</p>
-                                                <p class="mb-4">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, architecto ullam tenetur quia nemo ratione.</p>
+                                                <p class="text-secondary lead font-weight-600">“At Pkm Cargo, we understand the importance of timely cargo delivery. Whether you're shipping goods locally or internationally, you can rely on us for on-time delivery services that meet your deadlines and exceed your expectations.”</p>
+                                                <p class="mb-4">Ready to schedule your next delivery? Contact us today to learn more about our on-time delivery services and how we can support your cargo shipping requirements.</p>
                                                 <ul class="list-style2 mb-0">
-                                                    <li>Maecenas vitae luctus nibh. Curabitur pharetra luctus est, sit amet aliquam ex posuere id.</li>
-                                                    <li>Maecenas pharetra ante vel est lobortis</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur.</li>
+                                                    <li>Flexibility</li>
+                                                    <li>Reliable Transportation</li>
+                                                    <li>Punctuality</li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-xl-5 offset-xl-1 order-1 order-lg-2">
                                             <div class="pl-xxl-4 text-center text-lg-right">
-                                                <img src="img/content/tab-content-05.jpg" class="border-radius-10" alt="...">
+                                                <img src="img/image2.jpg" class="border-radius-10" alt="...">
                                             </div>
                                         </div>
                                     </div>
@@ -243,44 +199,24 @@
                                     <div class="row align-items-xl-center">
                                         <div class="col-lg-6 col-xl-5 mb-1-9 mb-lg-0">
                                             <div class="pr-xxl-4 text-center text-lg-left">
-                                                <img src="img/content/tab-content-06.jpg" class="border-radius-10" alt="...">
+                                                <img src="img/image3.jpg" class="border-radius-10" alt="...">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 offset-xl-1">
                                             <div class="pl-lg-3 pl-xl-0">
                                                 <h3 class="mb-3">24/7 Online Support</h3>
-                                                <p class="text-secondary lead font-weight-600">“Vivamus ut tellus sed tellus finibus egestas. Mauris adipiscing aliquet et nisl nec eleifend adipiscing elit.”</p>
-                                                <p class="mb-4">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, architecto ullam tenetur quia nemo ratione.</p>
+                                                <p class="text-secondary lead font-weight-600">“At Pkm Cargo, we are committed to providing you with round-the-clock assistance whenever you need it. Our 24/7 online support team is here to ensure that your cargo booking experience is smooth, convenient, and hassle-free.”</p>
+                                                <p class="mb-4">Don't hesitate to get in touch with us at any time. We're here to support your cargo shipping needs, day or night.</p>
                                                 <ul class="list-style2 mb-0">
-                                                    <li>Maecenas vitae luctus nibh. Curabitur pharetra luctus est, sit amet aliquam ex posuere id.</li>
-                                                    <li>Maecenas pharetra ante vel est lobortis</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur.</li>
+                                                    <li>Quick Responses</li>
+                                                    <li>Expert Assistance</li>
+                                                    <li>Problem Resolution</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="four">
-                                    <div class="row align-items-xl-center">
-                                        <div class="col-lg-6 mt-1-9 mt-lg-0 order-2 order-lg-1">
-                                            <div class="pr-lg-3 pr-xl-0">
-                                                <h3 class="mb-3">Insurance & Guarantee</h3>
-                                                <p class="text-secondary lead font-weight-600">“Vivamus ut tellus sed tellus finibus egestas. Mauris adipiscing aliquet et nisl nec eleifend adipiscing elit.”</p>
-                                                <p class="mb-4">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, architecto ullam tenetur quia nemo ratione.</p>
-                                                <ul class="list-style2 mb-0">
-                                                    <li>Maecenas vitae luctus nibh. Curabitur pharetra luctus est, sit amet aliquam ex posuere id.</li>
-                                                    <li>Maecenas pharetra ante vel est lobortis</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-xl-5 offset-xl-1 order-1 order-lg-2">
-                                            <div class="pl-xxl-4 text-center text-lg-right">
-                                                <img src="img/content/tab-content-07.jpg" class="border-radius-10" alt="...">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
                         <!-- end tabs -->
@@ -342,7 +278,7 @@
                 </div>
                 <div class="contact-wrapper-box">
                     <div class="row">
-                        <div class="col-lg-6 bg-img cover-background d-none d-lg-block image-hover" data-overlay-dark="0" data-background="img/content/contact-img.jpg"></div>
+                        <div class="col-lg-6 bg-img cover-background d-none d-lg-block image-hover" data-overlay-dark="0" data-background="img/image6.jpg"></div>
                         <div class="col-lg-6">
                             <div class="contact-form-area">
                                 <h3 class="mb-1-6">Call us or fill the form</h3>
