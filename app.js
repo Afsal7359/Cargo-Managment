@@ -11,6 +11,7 @@ const { default: mongoose } = require('mongoose');
 const { error } = require('console');
 const session = require('express-session');
 var app = express();
+
 dotenv.config()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,10 +38,12 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
 
 
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

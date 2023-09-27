@@ -6,6 +6,7 @@ const contact = require('../models/contact');
 const userlogin = require('../models/userlogin');
 const booking = require('../models/booking');
 const service = require('../models/service');
+const SendmailTransport = require('nodemailer/lib/sendmail-transport');
 
 module.exports={
 
@@ -209,14 +210,26 @@ module.exports={
 
         try{
             const {name,email,subject,number,message}=req.body
-            console.log(req.body);
+          
         await contact.create({name,email,subject,number,message});
-        console.log("contact sucessfully");
+        await SendmailTransport.sendMail({
+            from:'<EMAIL>', // sender address
+            to:`${process.env.GMAIL}`,// list of receivers
+            subject : `${subject}`,
+            html: ` <h1>Name:${name}</h1><br/>
+            Email:${email}<br/><br/>
+            Subject:${subject}<br/><br/>  Number:${number}<br/><br/> Message:<p>${message}</p>`
+            
+        })
+        console.log("contact send and saved sucessfully");
     res.redirect('/')
         }catch(err){ 
             console.log(err);
         }
     },
+
+
+    
     Deletecontact:async(req,res)=>{
         try{
             const {id}=req.params;

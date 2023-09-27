@@ -4,7 +4,7 @@ var router = express.Router();
 const upload = require('../util/multer');
 const adminauth  = require('../middlewears/Adminauth');
 const adminpanel = require('../controller/adminpanel');
-
+const sendmail = require('../controller/sendmail')
 
 /* GET home page. */
 router.get('/', adminauth.adminauth,admincontroller.admindashboard);
@@ -32,7 +32,7 @@ router.get('/deletegallery/:id',adminauth.adminauth,adminpanel.Deletegallery);
 
 //contact page
 router.get('/contact',adminauth.adminauth,adminpanel.Getcontact);
-router.post('/contactform',adminauth.adminauth,adminpanel.Addcontact);
+router.post('/contactform',sendmail.addContact);
 router.get('/deletecontact/:id',adminauth.adminauth,adminpanel.Deletecontact);
 
 //get user details
@@ -40,7 +40,7 @@ router.get('/user',adminauth.adminauth,adminpanel.Getuserdetail);
 
 //get cargo booking
 router.get('/booking',adminauth.adminauth,adminpanel.getbooking);
-router.post('/cargobooking',adminauth.adminauth,adminpanel.Postbooking);
+router.post('/cargobooking',adminpanel.Postbooking);
 
 //blog page
 router.get('/service',adminauth.adminauth,adminpanel.Getservice);
