@@ -19,7 +19,7 @@ router.get('/service',usercontroller.userService);
 
 router.get('/contact',usercontroller.userContact);
 
-router.get('/projects',usercontroller.usergallery);
+router.get('/gallery',usercontroller.usergallery);
 
 router.get('/blog',usercontroller.userBlog);
 
