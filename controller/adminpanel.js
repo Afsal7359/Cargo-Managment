@@ -256,14 +256,13 @@ module.exports={
         console.log(err);
         }
     },
-    Postbooking:async(req,res)=>{
+  
+    DeleteBooking:async(req,res)=>{
         try{
-            console.log('fdessssssssssssssssssssssssgjcdsjhfgbdjhfbdjhvdsafhdvfmhdbfhdbjdv');
-            const {from,destination,box,name,number,email,details}=req.body
-            console.log(req.body,"feeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-            await booking.create({from,destination,box,name,number,email,details})
-            console.log('cargo booking recieved');
-            res.redirect('/' )
+        const {id}=req.params
+        await booking.findByIdAndRemove({_id:id})
+        console.log('booking deleted');
+        res.redirect('/admin/booking')
         }catch(err){
             console.log(err);
         }
@@ -333,5 +332,7 @@ module.exports={
             console.log(err)
         }
     },
+
+
 
 }

@@ -5,7 +5,7 @@
     
 
         <!--app-content open-->
-        <div class="app-content main-content mt-0">
+        <div class="app-content main-content mt-0"  >
             <div class="side-app">
 
                 <!-- CONTAINER -->
@@ -15,27 +15,138 @@
                   
 
                     <!-- ROW-1 OPEN -->
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
+                    <div clss="row">
+                        <div clas="col-lg-6 col-md-12">
                             <div class="card">
                                 <div class="card-header border-bottom">
-                                    <h3 class="card-title">Line chart</h3>
+                                    <h3 class="card-title">Dashboard</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div id="echart1" class="chartsh"></div>
+                                  
+                   
+                        <div class="row">
+                            <div class="row row-sm">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-header border-bottom">
+                                            <h3 class="card-title"><!-- Button to toggle table visibility -->
+                                                <button id="viewcargobooking" class="btn btn-primary">View Cargo Bookings</button>
+                                                <button id="viewenquiry" class="btn btn-primary">View Enquiries</button>
+
+                                                </h3>
+                                        </div>
+                                        <% if (bookings) { %>
+
+                                            <div id="bookingTable" style="display: none;">
+                                                <div class="card-header border-bottom">
+                                                    <h3 class="card-title"> Cargo Booking Datatable</h3>
+                                                </div>
+                                            <div class="table-responsive">
+                                                <table id="editable-responsive-table" class="table editable-table table-nowrap table-bordered table-edit wp-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>ID</th>
+                                                            <th>From</th>
+                                                            <th>Destination</th>
+                                                            <th>N.O of Box</th>
+                                                            <th>Name</th>
+                                                            <th>Email</th>
+                                                            <th>Number</th>
+                                                            <th>Details</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <% for (let i = 0; i < bookings.length; i++) { %>
+                                                            <% let currentBooking = bookings[i]; %>
+                                                            <tr>
+                                                                <td><%= i + 1 %></td>
+                                                                <td><%= currentBooking.from %></td>
+                                                                <td><%= currentBooking.destination %></td>
+                                                                <td><%= currentBooking.box %></td>
+                                                                <td><%= currentBooking.name %></td>
+                                                                <td><%= currentBooking.email %></td>
+                                                                <td><%= currentBooking.number %></td>
+                                                                <td><%= currentBooking.details %></td>
+                                                               
+                                                            </tr>
+                                                        <% } %>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <% } else { %>
+                                            <h1 style="color: red;">Table not found</h1>
+                                        <% } %>
+                                        <%if (contacts) { %>
+                                            <div id="enquiryTable" style="display: none;">
+                                                
+                                                    <div class="card-header border-bottom">
+                                                        <h3 class="card-title"> Enquiry  Datatable</h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="editable-responsive-table" class="table editable-table table-nowrap table-bordered table-edit wp-100">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>ID</th>
+                                                                                <th>name</th>
+                                                                                <th>email</th>
+                                                                                <th>number</th>
+                                                                                <th>subject</th>
+                                                                                <th>message</th>
+                                                                              
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <% for (let i = 0; i < contacts.length; i++) { %>
+                                                                                <% let currentcontacts = contacts[i]; %>
+                                                                        
+                                                                            <tr>
+                                                                               
+                                                                                    <td><%= i + 1 %></td>
+                                                                                    <td><%= currentcontacts.name%></td>
+                                                                                    <td><%= currentcontacts.email%></td>
+                                                                                    <td><%= currentcontacts.number%></td>
+                                                                                    <td><%= currentcontacts.subject%></td>
+                                                                                    <td><%= currentcontacts.message%></td>
+                                                                                    
+                                                                                    
+                                                                             
+                                                                            </tr>
+                                                                            <% } %>
+                                                                            
+                                                                            
+                                                                          
+                                                                                   
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            <!-- End Row -->
+                                        <% } else { %>
+                                            <h1 style="color: red;">Table not found</h1>
+                                        <% } %>
+
+
+
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="card">
-                                <div class="card-header border-bottom">
-                                    <h3 class="card-title">Combination of Line & Bar Chart</h3>
-                                </div>
-                                <div class="card-body">
-                                    <div id="echart2" class="chartsh"></div>
+                      
+                      
+
+                     
+                        
                                 </div>
                             </div>
                         </div>
+                     
                     </div>
                     <!-- ROW-1 CLOSED -->
 
@@ -56,3 +167,15 @@
 
 </div>
 <!-- page -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Function to toggle booking table visibility
+    $("#viewcargobooking").click(function() {
+        $("#bookingTable").toggle();
+    });
+ // Function to toggle enquiry table visibility
+ $("#viewenquiry").click(function() {
+        $("#enquiryTable").toggle();
+    });
+    
+</script>

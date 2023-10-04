@@ -40,12 +40,15 @@ router.get('/user',adminauth.adminauth,adminpanel.Getuserdetail);
 
 //get cargo booking
 router.get('/booking',adminauth.adminauth,adminpanel.getbooking);
-router.post('/cargobooking',adminpanel.Postbooking);
+router.post('/cargobooking',sendmail.cargobooking);
+router.get('/deletebooking/:id',adminauth.adminauth,adminpanel.DeleteBooking);
 
 //blog page
 router.get('/service',adminauth.adminauth,adminpanel.Getservice);
 router.post('/addservice',upload.single('serviceimage'),adminauth.adminauth,adminpanel.Addservice);
 router.post('/editservice/:id',upload.single("serviceimage"),adminauth.adminauth,adminpanel.Updatedservice);
 router.get('/deleteservice/:id',adminauth.adminauth,adminpanel.Deleteservice);
+
+
 
 module.exports = router;

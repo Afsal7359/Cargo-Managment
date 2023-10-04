@@ -25,8 +25,6 @@ router.get('/blog',usercontroller.userBlog);
 
 router.get('/user',usercontroller.userinfo);
 
-router.get('/booking',usercontroller.cargobooking);
-
 router.get('/servicedetail/:id',usercontroller.servicedetail);
 
 

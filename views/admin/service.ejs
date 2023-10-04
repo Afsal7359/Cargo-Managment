@@ -51,62 +51,46 @@
     </div>
 </div>
 <!-- /row -->
-<%if (services) { %>
+<% if (services) { %>
     <div class="row">
-        <div class="row row-sm">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header border-bottom">
-                        <h3 class="card-title"> services page Datatable</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table id="editable-responsive-table" class="table editable-table table-nowrap table-bordered table-edit wp-100">
-                                <thead>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Services Page Datatable</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="editable-responsive-table" class="table editable-table table-nowrap table-bordered table-edit wp-100">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Heading</th>
+                                    <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (let i = 0; i < services.length; i++) { %>
+                                    <% let currentService = services[i]; %>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Date</th>
-                                        <th>Heading</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% for (let i = 0;   < services.length; i++) { %>
-                                        <% let currentservices = services[i]; %>
-                                
-                                    <tr>
-                                       
-                                            <td><%= i + 1 %></td>
-                                            <td><%= currentservices.servicehead%></td>
-                                            <td><%= currentservices.servicedescription%></td>
-                                            <td><img src="<%= currentservices.serviceimage %>" style="height: 5em;"></td>
-                                            <td>
-                                                <div class="card-body">
-                                                    <p class="text-muted"></p>
-                                                    <a  class="btn btn-primary" data-bs-target="#modaldemo2_<%=i%>" data-bs-toggle="modal">Edit</a>
-                                                   <!-- data-bs-target="#modaldemo3_<%= i %>" data-bs-toggle="modal">Delete</a> -->
-                                                   <!-- <a class="btn btn-primary">   <button class="btn btn-danger" onclick="confirmDelete()">Delete</button></a> -->
-                                                   <a  class="btn btn-danger" data-bs-target="#modaldemo3_<%=i%>" data-bs-toggle="modal">Delete </a>
-                                                    
-                                               
-                                                </div> 
-                                                
-                                                
-                                            </td>
-                                     
-                                    </tr>
-                                    <% } %>
-                                    
-                                    
-                                  
-                                           
+                                        <td><%= i + 1 %></td>
+                                        <td><!-- Insert date here --></td>
+                                        <td><%= currentService.servicehead %></td>
+                                        <td><%= currentService.servicedescription %></td>
+                                        <td><img src="<%= currentService.serviceimage %>" style="height: 5em;"></td>
+                                        <td>
+                                            <div class="card-body">
+                                                <p class="text-muted"></p>
+                                                <a class="btn btn-primary" data-bs-target="#modaldemo2_<%= i %>" data-bs-toggle="modal">Edit</a>
+                                                <a class="btn btn-danger" data-bs-target="#modaldemo3_<%= i %>" data-bs-toggle="modal">Delete</a>
+                                            </div>
                                         </td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                <% } %>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -232,14 +216,16 @@
    
 
 </div>
+
+
 <% for (let i = 0; i < services.length; i++) { %>
     <script>
-        function validateForm(inputId, errorId) {
+        function validateForm(inputId, errorId, maxSize) {
             var fileInput = document.getElementById(inputId);
-            var fileSize = fileInput.files[0].size / 1024; // Size in MB
-    
-            if (fileSize > 1024) { // 10 MB
-                document.getElementById(errorId).innerHTML = 'File size must be less than 1 MB.';
+            var fileSize = fileInput.files[0].size / 1024; // Size in KB
+
+            if (fileSize > maxSize) {
+                document.getElementById(errorId).innerHTML = 'File size must be less than ' + (maxSize / 1024) + ' MB.';
                 fileInput.value = ''; // Clear the input
                 return false; // Prevent form submission
             } else {
@@ -247,7 +233,7 @@
                 return true; // Allow form submission
             }
         }
-    
+
         function updateImagePreview(input, imageId) {
             if (input.files && input.files[0]) {
                 const reader = new FileReader();
@@ -257,24 +243,19 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-    
+
         document.getElementById('formFileLg').addEventListener('change', function () {
             var fileInput = this;
-            var fileSize = fileInput.files[0].size /  1024; // Size in MB
-    
-            if (fileSize > 1024) { // 10 MB
-                document.getElementById('fileSizeError').innerHTML = 'File size must be less than 1 MB.';
-                fileInput.value = ''; // Clear the input
-            } else {
-                document.getElementById('fileSizeError').innerHTML = '';
-            }
+            var maxSize = 1024 * 1024; // 1 MB
+            validateForm('formFileLg', 'fileSizeError', maxSize);
         });
-    
+
         // Add event listeners for the "Edit" modal file inputs
-      
         document.getElementById('formFileLg_<%= i %>').addEventListener('change', function () {
-            validateForm('formFileLg_<%= i %>', 'fileSizeError_<%= i %>');
+            var fileInput = this;
+            var maxSize = 1024 * 1024; // 1 MB
+            validateForm('formFileLg_<%= i %>', 'fileSizeError_<%= i %>', maxSize);
         });
-      
     </script>
-    <% } %>
+<% } %>
+

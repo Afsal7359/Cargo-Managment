@@ -74,8 +74,10 @@ module.exports={
         try{
         let user=req.session.userloggedIn
         let data=req.session.userloginuser
+        let successMessage= req.session.successMessage; 
         const banners= await banner.find()
-            res.render('user/home',{user,data,banners});
+        const services = await service.find()
+            res.render('user/home',{user,data,banners,services,successMessage});
         }catch(err){
             console.log(err);
     }
@@ -106,7 +108,8 @@ module.exports={
     userContact: async(req,res)=>{
         try{
             let user=req.session.userloggedIn
-            res.render('user/contact',{user});
+            let successMessage2= req.session.successMessage2;
+            res.render('user/contact',{user,successMessage2});
         }catch(err){
             console.log(err);
     }
@@ -141,13 +144,7 @@ module.exports={
         res.render('user/userinfo',{data,user})
     },
 
-    cargobooking:async(req,res)=>{
-        try{
-        res.render('user/booking');
-        }catch(err){
-            console.log(err);
-        }
-    },
+    
 
     servicedetail:async(req,res)=>{
         try{

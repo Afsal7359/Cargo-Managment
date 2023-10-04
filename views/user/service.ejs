@@ -5,12 +5,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-animation" data-in-effect="fadeInUp">Services</h1>
+                        <h1 class="text-animation" data-in-effect="fadeInUp">Our Services</h1>
                     </div>
                     <div class="col-md-12">
                         <ul class="wow fadeInUp" data-wow-delay="400ms">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#!">Services</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="">Our Services</a></li>
                         </ul>
                     </div>
                 </div>
@@ -33,6 +33,7 @@
                                 <div class="card-body">
                                     <span class="mb-4 d-block"><img src="<%= currentService.serviceimage %>" alt="..."></span>
                                     <h3 class="h5 mb-3 mt-2"><a href="#!"><%= currentService.servicehead %></a></h3>
+                                    <p class=" mb-3 mt-2"><a href="#!"><%= currentService.servicedescription.split(' ').slice(0, 10).join(' ') %></a></p>
                                     <div class="card-info">
                                         <a href="servicedetail/<%=currentService._id%>" class="font-weight-600 text-secondary text-primary-hover">more Details<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
                                     </div>

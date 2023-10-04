@@ -1,4 +1,6 @@
- <!-- BANNER
+
+
+<!-- BANNER
         ================================================== -->
         <section class="full-screen top-position1 p-0">
             <div class="slider-fade1 owl-carousel owl-theme w-100 min-vh-100">
@@ -8,12 +10,12 @@
                     <div class="container d-flex flex-column">
                         <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
                             <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 pt-6 pb-12 py-sm-6">
-                                <span class="text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary small-title">Package safety.</span>
-                                <h2 class="text-white mb-2-2 display-3 font-weight-800 title">Secure for all courier & <span class="text-primary">packages.</span></h2>
+                                <span class="text-uppercase letter-spacing-2 font-weight-700 small mb-3 d-block text-primary small-title"><%= currentBanners.bannerhead1 %></span>
+                                <h2 class="text-white mb-2-2 display-3 font-weight-800 title"><%= currentBanners.bannerhead2%></span></h2>
                                 <a href="about" class="butn shadow-none me-2 my-1 my-sm-0">
                                     <span>Learn More</span>
                                 </a>
-                                <a href="/contact" class="butn secondary my-1 my-sm-0">How We Work</a>
+                                <a href="/service" class="butn secondary my-1 my-sm-0">How We Work</a>
                             </div>
                         </div>
                     </div>
@@ -21,7 +23,7 @@
                 <% } %>
             </div>
         </section>       
-    
+
         <!-- ABOUT US
         ================================================== -->
         <section>
@@ -65,6 +67,7 @@
 
         <!-- SERVICES
         ================================================== -->
+        <% if (services){%>
         <section class="bg-light">
             <div class="container">
                 <div class="text-center mb-5 w-95 w-md-90 w-lg-70 w-xl-60 mx-auto wow fadeIn" data-wow-delay="200ms">
@@ -72,51 +75,104 @@
                     <h2 class="mb-0 font-weight-800 h1">We offer best types of services for your <span class="text-secondary">transport</span></h2>
                 </div>
                 <div class="row mt-n1-9">
+                    <% if (services && services.length > 0) { %>
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="400ms">
                         <div class="card border-radius-10 card-style5">
                             <div class="card-img">
-                                <img src="img/services/air-freight-01.jpg" alt="...">
+                                <img src="<%=services[0].serviceimage%>" alt="...">
                                 <span class="icon"><img src="img/icons/icon-01-white.png" alt="..."></span>
                             </div>
                             <div class="card-body pb-2-0 pt-7 px-1-6 px-sm-2-6">
-                                <h3 class="mb-4 h4"><a href="#!">Air Freight</a></h3>
-                                <p>The services of our company to fulfill the expectations of our great customers.</p>
-                                <a href="#!" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
+                                <h3 class="mb-4 h4"><a href="#!"><%=services[0].servicehead%></a></h3>
+                                <p><%=services[0].servicedescription.split(' ').slice(0, 10).join(' ') %></p>
+                                <a href="servicedetail/<%=services[0]._id%>" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
                             </div>
                         </div>
                     </div>
+                    <% } else { %>
+                        <div class="col-md-6 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="400ms">
+                            <div class="card border-radius-10 card-style5">
+                                <div class="card-img">
+                                    <img src="img/services/air-freight-01.jpg" alt="...">
+                                    <span class="icon"><img src="img/icons/icon-01-white.png" alt="..."></span>
+                                </div>
+                                <div class="card-body pb-2-0 pt-7 px-1-6 px-sm-2-6">
+                                    <h3 class="mb-4 h4"><a href="#!">Air Freight</a></h3>
+                                    <p>The services of our company to fulfill the expectations of our great customers.</p>
+                                    <a href="#!" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+
+                        <% if (services && services.length > 1) { %>
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="600ms">
                         <div class="card border-radius-10 card-style5">
                             <div class="card-img">
-                                <img src="img/services/road-freight-01.jpg" alt="...">
+                                <img src="<%=services[1].serviceimage%>" alt="...">
                                 <span class="icon"><img src="img/icons/icon-02-white.png" alt="..."></span>
                             </div>
                             <div class="card-body pb-2-0 pt-7 px-1-6 px-sm-2-6">
-                                <h3 class="mb-4 h4"><a href="#!">Road Freight</a></h3>
-                                <p>The services of our company to fulfill the expectations of our great customers.</p>
-                                <a href="#!" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
+                                <h3 class="mb-4 h4"><a href="#!"><%=services[1].servicehead%></a></h3>
+                                <p><%=services[1].servicedescription.split(' ').slice(0, 10).join(' ') %></p>
+                                <a href="servicedetail/<%=services[1]._id%>"  class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
                             </div>
                         </div>
                     </div>
+                    <% } else { %>
+                        <div class="col-md-6 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="600ms">
+                            <div class="card border-radius-10 card-style5">
+                                <div class="card-img">
+                                    <img src="img/services/road-freight-01.jpg" alt="...">
+                                    <span class="icon"><img src="img/icons/icon-02-white.png" alt="..."></span>
+                                </div>
+                                <div class="card-body pb-2-0 pt-7 px-1-6 px-sm-2-6">
+                                    <h3 class="mb-4 h4"><a href="#!">Road Freight</a></h3>
+                                    <p>The services of our company to fulfill the expectations of our great customers.</p>
+                                    <a href="#!" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+
+                        <% if (services && services.length > 3) { %>
                     <div class="col-md-6 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="800ms">
                         <div class="card border-radius-10 card-style5">
                             <div class="card-img">
-                                <img src="img/services/ocean-freight-01.jpg" alt="...">
+                                <img src="<%=services[2].serviceimage%>" alt="...">
                                 <span class="icon"><img src="img/icons/icon-03-white.png" alt="..."></span>
                             </div>
                             <div class="card-body pb-2-0 pt-7 px-1-6 px-sm-2-6">
-                                <h3 class="mb-4 h4"><a href="#!">Ocean Freight</a></h3>
-                                <p>The services of our company to fulfill the expectations of our great customers.</p>
-                                <a href="#!" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
+                                <h3 class="mb-4 h4"><a href="#!"><%=services[2].servicehead%></a></h3>
+                                <p><%=services[2].servicedescription.split(' ').slice(0, 10).join(' ') %></p>
+                                <a href="servicedetail/<%=services[2]._id%>" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
                             </div>
                         </div>
                     </div>
+                    <%}else{%>
+                        <div class="col-md-6 col-lg-4 mt-1-9 wow fadeIn" data-wow-delay="800ms">
+                            <div class="card border-radius-10 card-style5">
+                                <div class="card-img">
+                                    <img src="img/services/ocean-freight-01.jpg" alt="...">
+                                    <span class="icon"><img src="img/icons/icon-03-white.png" alt="..."></span>
+                                </div>
+                                <div class="card-body pb-2-0 pt-7 px-1-6 px-sm-2-6">
+                                    <h3 class="mb-4 h4"><a href="#!">Ocean Freight</a></h3>
+                                    <p>The services of our company to fulfill the expectations of our great customers.</p>
+                                    <a href="#!" class="font-weight-600 text-secondary text-primary-hover">read more<i class="fas fa-arrow-right small align-middle ms-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
                     <div class="col-md-12 text-center mt-5 wow fadeIn" data-wow-delay="1000ms">
                         <a href="/service" class="butn dark">view more services</a>
                     </div>
                 </div>
             </div>
         </section>
+        <%}else{%>
+        no data
+    <%}%>
 
         <!-- WHYCHOOSE US
         ================================================== -->
@@ -367,3 +423,13 @@
                 </div>
             </div>
         </section>
+<% if (successMessage) { %>
+<script>
+  // Display a JavaScript alert with the success message
+  alert("<%= successMessage %>");
+
+</script>
+
+<%}%>
+
+

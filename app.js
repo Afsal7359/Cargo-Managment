@@ -24,10 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({resave:false,saveUninitialized: true,secret:"key",cookie:{maxAge:6000000}}))
+app.use(session({resave:false,saveUninitialized: true,secret:"key",cookie:{maxAge:500000}}))
 app.use('/admin', AdminRouter);
 app.use('/', usersRouter);
-
 
 //database connection 
 mongoose.connect(process.env.MONGO_URL).then(()=>{

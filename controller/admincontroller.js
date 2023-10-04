@@ -1,11 +1,15 @@
 const adminlogin = require("../models/admin");
+const booking = require("../models/booking");
+const contact = require("../models/contact");
 
 
 module.exports={
 
     admindashboard:async(req,res)=>{
         try{
-            res.render('admin/dashboard',{layout:"adminlayout"})
+            const bookings=await booking.find()
+            const contacts=await contact.find()
+            res.render('admin/dashboard',{layout:"adminlayout",bookings,contacts})
         }catch(err){
             console.log(err);
         }
