@@ -66,30 +66,30 @@ res.redirect('/');
      
     console.log('booking saved scucessfully');
         
-        // const mailOptions = {
-        //   from: process.env.EMAIL_USER,
-        //   subject:"New Cargo Booking",
-        //   to: 'saidmuhammad4771@gmail.com',
+        const mailOptions = {
+          from: process.env.EMAIL_USER,
+          subject:"New Cargo Booking",
+          to: 'saidmuhammad4771@gmail.com',
          
-        //   html: `
-        //     <h1>Cargo Booking</h1><br/>
-        //     from: ${from}<br/><br/>
-        //     destination: ${destination}<br/><br/>
-        //     N.O of box: ${box}<br/><br/>
-        //     name: ${name}<br/><br/>
-        //     email: ${email}<br/><br/>
-        //     details:${details}
-        //   `
-        // }; 
+          html: `
+            <h1>Cargo Booking</h1><br/>
+            from: ${from}<br/><br/>
+            destination: ${destination}<br/><br/>
+            N.O of box: ${box}<br/><br/>
+            name: ${name}<br/><br/>
+            email: ${email}<br/><br/>
+            details:${details}
+          `
+        }; 
       
         
-      //   transporter.sendMail(mailOptions, (error, info) => {
-      //     if (error) {
-      //       console.error('Error sending email:', error);
-      //     } else {
-      //       console.log('Email sent:', info.response );
-      //     }
-      //   });
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.error('Error sending email:', error);
+          } else {
+            console.log('Email sent:', info.response );
+          }
+        });
         
   
   
